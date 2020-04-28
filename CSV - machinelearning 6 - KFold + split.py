@@ -46,6 +46,8 @@ worksheet = results.add_worksheet("Wyniki")
 row = 0
 col = 0
 
+kolejnytest = 1
+
 worksheet.write(row, col, "Nazwa_algorytmu")
 worksheet.write(row, col + 1, "Acc")
 worksheet.write(row, col + 2, "Acc_walidacji")
