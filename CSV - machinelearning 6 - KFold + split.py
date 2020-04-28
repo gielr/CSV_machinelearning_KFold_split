@@ -38,8 +38,8 @@ def adjust(opis_train, kategoria_train, opis_test, kategoria_test):
 
 
 # Start programu
-dataset = pd.read_csv('Dane-do-nauki.csv', delimiter=';', encoding='utf-8')
-datasetValidation = pd.read_csv('Dane-do-walidacji.csv', delimiter=';', encoding='utf-8')
+dataset = pd.read_csv('Files\Dane-do-walidacji.csv', delimiter=';', encoding='utf-8')
+datasetValidation = pd.read_csv('Files\Dane-do-walidacji.csv', delimiter=';', encoding='utf-8')
 
 results = xlsxwriter.Workbook("Wyniki.xlsx")
 worksheet = results.add_worksheet("Wyniki")
