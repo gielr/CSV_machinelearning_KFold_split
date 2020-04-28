@@ -39,15 +39,15 @@ def adjust(opis_train, kategoria_train, opis_test, kategoria_test):
 
 # Start programu
 dataset = pd.read_csv('Files\Dane-do-nauki.csv', delimiter=';', encoding='utf-8')
-datasetValidation = pd.read_csv('Files\Dane-do-walidacji.csv', delimiter=';', encoding='utf-8')
+datasetValidation = pd.read_csv('Files/Dane-do-walidacji.csv', delimiter=';', encoding='utf-8')
 
+#Tworze plik z wynikami
 results = xlsxwriter.Workbook("Wyniki.xlsx")
 worksheet = results.add_worksheet("Wyniki")
 row = 0
 col = 0
 
-kolejnytest = 1
-
+#Zapisuje nazwy kolumn
 worksheet.write(row, col, "Nazwa_algorytmu")
 worksheet.write(row, col + 1, "Acc")
 worksheet.write(row, col + 2, "Acc_walidacji")
@@ -91,7 +91,7 @@ x_train2, x_test2, y_train2, y_test2 = train_test_split(dataset["opis"],
 datasetValidation['class_label'] = Encode.fit_transform(datasetValidation['klasa'])
 x_trainValdation, x_validation, y_trainValdation, y_validation = train_test_split(datasetValidation["opis"],
                                                                                   datasetValidation['class_label'],
-                                                                                  random_state=1, train_size=0.0025)
+                                                                                  random_state=1, train_size=0.016)
 
 for names, clf in zip(names, classifiers):
     count = 1
